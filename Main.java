@@ -52,7 +52,7 @@ public class Main {
                     while (!userExistence){
 
                         for (User user : users){
-                            if(user.getName().equalsIgnoreCase(credentials.get(0))){
+                            if(user.getName().equalsIgnoreCase(credentials.getFirst())){
                                 System.out.println("Name already exist! Try again!");
                                 credentials = loginPage.loginNamePassword();
 
@@ -61,7 +61,7 @@ public class Main {
                             }
                         }
 
-                        if(nameExist == false){
+                        if(!nameExist){
 
                             users.add(new User(credentials.get(0), credentials.get(1)));
                             System.out.println("Successful user creation!");
@@ -80,7 +80,7 @@ public class Main {
             }
         }
 
-        if (logginAproved == true){
+        if (logginAproved){
             System.out.println("Initializing the system!");
 
             int menuOption = 0;
